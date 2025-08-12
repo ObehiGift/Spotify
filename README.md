@@ -23,6 +23,7 @@ Here's a breakdown of what I explored
 
 ```python
 # how has my listening habit changed over the month?
+
 df['month_str'] = df['endTime'].dt.strftime('%b')
 df['month_int'] = df['endTime'].dt.strftime('%m')
 m = df.groupby(['month_str','month_int'])['seconds_played'].sum().reset_index().sort_values('month_int')
@@ -39,3 +40,6 @@ sns.despine()
 plt.savefig('monthly_spotify_listening_time',dpi=300)
 plt.show()
 ```
+Visualization
+------
+![listening habit](
