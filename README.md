@@ -22,8 +22,8 @@ Here's a breakdown of what I explored
 - **Top Content:** I uncovered the **most played artistes and most played tracks** across all sessions. Then, using horizontal bar charts, I visualized my **top 10 mosst played tracks** and **top 10 artists**, offering a clear view of my music perferences.
 
 ```
+python
 # how has my listening habit changed over the month?
-
 df['month_str'] = df['endTime'].dt.strftime('%b')
 df['month_int'] = df['endTime'].dt.strftime('%m')
 m = df.groupby(['month_str','month_int'])['seconds_played'].sum().reset_index().sort_values('month_int')
@@ -40,4 +40,3 @@ sns.despine()
 plt.savefig('monthly_spotify_listening_time',dpi=300)
 plt.show()
 ```
-
