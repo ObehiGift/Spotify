@@ -21,8 +21,7 @@ Here's a breakdown of what I explored
 - **Unique Content:** I analyzed how many **individual tracks and distinct artists** I've listened to, showing the diversity in my mustic artistes.
 - **Top Content:** I uncovered the **most played artistes and most played tracks** across all sessions. Then, using horizontal bar charts, I visualized my **top 10 mosst played tracks** and **top 10 artists**, offering a clear view of my music perferences.
 
-```
-python
+```python
 # how has my listening habit changed over the month?
 df['month_str'] = df['endTime'].dt.strftime('%b')
 df['month_int'] = df['endTime'].dt.strftime('%m')
