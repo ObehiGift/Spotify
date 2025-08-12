@@ -19,6 +19,11 @@ Here's a breakdown of what I explored
 - **Listening Volume:** I calculated the **total listening time in hours** to understand how much time I've spent on Spotify overall, I also determined the **average listening time per session**, providing a sense of hoe long I typically stream music at a time.
 - **Session Extremes:** To identify standout sessions, I found the **longest and shortest listening sessions** based on duration.
 - **Unique Content:** I analyzed how many **individual tracks and distinct artists** I've listened to, showing the diversity in my mustic artistes.
+- **Time Based Analysis:** I converted the endTime colume to a **datetime** format enabling more advanced time-based insights. From there I:
+  - Analyzed **which day of the week** I streamed music the most
+  - Broke down listening activity by **hour of the day** to see when I usually tune in
+  - Explored how my **listening behaviour changed over the months**, visualized with a line graph.
+  - Identified the **top 10 days** with the highest total listening time.
 - **Top Content:** I uncovered the **most played artistes and most played tracks** across all sessions. Then, using horizontal bar charts, I visualized my **top 10 mosst played tracks** and **top 10 artists**, offering a clear view of my music perferences.
 
 ```python
@@ -64,6 +69,8 @@ sns.despine()
 plt.savefig('Top 10 tracks', dpi=300)
 plt.show()
 ```
+Visualization
+-----
 ![tracks](https://github.com/ObehiGift/Spotify/blob/main/Top%2010%20tracks.png)
 
 ```python
@@ -88,4 +95,24 @@ plt.tight_layout()
 plt.savefig('Top_10_Artistes',dpi=300)
 plt.show()
 ```
-![tracks](
+Visualization
+-----
+![artists](https://github.com/ObehiGift/Spotify/blob/main/Top_10_Artistes.png)
+
+This analysis helped me turn raw data into narrative illustrating not just what i listened to, but how my habit changed over the time.
+
+## 🖊What I Learned
+- How to clean and preprocess time-based data
+- Grouping and aggregating data using Pandas
+- Creating clear, meaningful plots with Matplotlib ans Seaborn
+- Using Python to turn raw activity logs into visual stories
+
+## 💡Insights
+- My top 10 tracks were non-Nigerian songs
+- I had only 1 Nigerian artist in my Top 10 artist - Fireboy DML
+- I listen to songs mostly on Saturdays
+- I listen to songs mostly at 10am in the morning
+- I had my highest listening time in september and lowest in june
+
+## 🗂Conclusion
+This analysis provided a deeper look into my music perferences and patterns. it also strengthened my skills in Python, data visualization, and working with real-world time-series data.
