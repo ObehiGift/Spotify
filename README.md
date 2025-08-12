@@ -42,4 +42,26 @@ plt.show()
 ```
 Visualization
 ------
-![listening habit](
+![listening habit](https://github.com/ObehiGift/Spotify/blob/main/monthly_spotify_listening_time.png)
+
+```python
+#what's my top 10 most played tracks?
+
+Top_10 = df.groupby(['artistName','trackName'])['seconds_played'].sum().sort_values(ascending = True).tail(10).copy().reset_index()
+
+
+Top_10
+
+plt.figure(figsize=(10,3))
+
+plt.barh(Top_10['trackName'],Top_10['seconds_played'])
+
+for i,value in enumerate((Top_10)['seconds_played']):
+    plt.text(Top_10['seconds_played'].iloc[i],Top_10['trackName'].iloc[i],f'{value:.0f}',ha='left',va='center')
+plt.title('Top 10 most played tracks')
+plt.xlabel('Total listening time (s)')
+sns.despine()
+plt.savefig('Top 10 tracks', dpi=300)
+plt.show()
+```
+![tracks](
