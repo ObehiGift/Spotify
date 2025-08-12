@@ -64,4 +64,28 @@ sns.despine()
 plt.savefig('Top 10 tracks', dpi=300)
 plt.show()
 ```
+![tracks](https://github.com/ObehiGift/Spotify/blob/main/Top%2010%20tracks.png)
+
+```python
+#who are my Top 10 most listened artistes
+
+Top_artists = df.groupby(df['artistName'])['seconds_played'].sum().sort_values(ascending=True).tail(10).reset_index()
+
+Top_artists
+
+plt.figure(figsize=(10,3))
+
+plt.barh(Top_artists['artistName'],Top_artists['seconds_played'])
+
+for i,value in enumerate((Top_artists)['seconds_played']):
+    plt.text(Top_artists['seconds_played'].iloc[i],Top_artists['artistName'].iloc[i],f'{value:.0f}',ha='left',va='center')
+
+plt.xlabel('Total Listening Time (s)')
+plt.ylabel('')
+plt.title('Top 10 Artistes')
+sns.despine()
+plt.tight_layout()
+plt.savefig('Top_10_Artistes',dpi=300)
+plt.show()
+```
 ![tracks](
